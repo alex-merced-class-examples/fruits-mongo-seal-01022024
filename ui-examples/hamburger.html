@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <h1>My Website Title</h1>
+        <nav>
+            <div id="menu">
+                <href a="#"><div class="menu-item">Link</div></href>
+                <href a="#"><div class="menu-item">Link</div></href>
+                <href a="#"><div class="menu-item">Link</div></href>
+                <href a="#"><div class="menu-item">Link</div></href>
+                <href a="#"><div class="menu-item">Link</div></href>
+                <href a="#"><div class="menu-item">Link</div></href>
+            </div>
+            <div id="hamburger">
+                <label id="hamburger-label" for="hamburger-toggle">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                </label>
+                <input type="checkbox" id="hamburger-toggle"/>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ----------------STYLING---------------------------- -->
+
+<style>
+
+    /* center webpage title */
+    header h1 {
+        text-align: center;
+    }
+
+    /* MAKE CHECKBOX INVISIBLE (click on label will toggle it) */
+    #hamburger-toggle {
+        display: none;
+    }
+
+    /* Make divs in label look like a hamburger icon*/
+    .hamburger-line {
+        width: 15px;
+        border: 2px solid black;
+        margin: 2px auto;
+    }
+
+    /* Position Hamburger in the upper right */
+    #hamburger {
+        position: fixed;
+        top: 2px;
+        right: 2px;
+    }
+
+    /* Make the Hamburger Feel Clickable */
+    #hamburger:hover {
+        background-color: darkseagreen;
+        cursor: pointer;
+    }
+
+    /* Menus Mobile Appearance */
+    #menu {
+        display: flex;
+        width: 100px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 6px;
+        background-color: cadetblue;
+        /* position the menu off screen */
+        position: fixed;
+        top: 25px;
+        right: -200px;
+        /* transition to animate entrance */
+        transition: right .4s;
+    }
+
+    /* Make the Menu Toggle when Click Label (label triggers associated "for" checkbox) */
+    nav:has(#hamburger-toggle:checked) #menu {
+        right: 0;
+    }
+
+    @media(min-width: 600px){
+        #menu {
+            flex-direction:row;
+            position: unset;
+            width: 90%;
+            justify-content: space-around;
+            margin: auto;
+        }
+
+        #hamburger {
+            display: none;
+        }
+    }
+
+
+</style>
+    
+</body>
+</html>

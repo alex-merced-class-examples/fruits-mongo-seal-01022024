@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <!-- MOSTLY HTML MODAL -->
+    <div id="example1">
+      <dialog id="modal1">
+        <p>Greetings, one and all!</p>
+
+        <button onclick="modal1.close()">OK</button>
+      </dialog>
+
+      <button onclick="modal1.showModal()">OK</button>
+    </div>
+    <!-- ------------------------------------------ -->
+    <!-- Modal with More Javascript -->
+    <div id="example2">
+        <dialog id="modal2">
+          <p>Greetings, one and all!</p>
+  
+          <form>
+            <input type="text" name="name" placeholder="what is your name"/>
+            <button id="modal2submit">Submit</button>
+          </form>
+        </dialog>
+  
+        <button id="openmodal2">OK</button>
+
+      <script>
+        //save nodes into variables
+        const modal2 = document.querySelector("#modal2")
+        const modal2Form = document.querySelector("#modal2 form")
+        const openmodal2 = document.querySelector("#openmodal2")
+
+        // make button open the modal
+        openmodal2.addEventListener("click", () => modal2.showModal())
+
+        // handle form submission then close the modal
+        modal2Form.addEventListener("submit", (event) => {
+            //prevent form refresh (not needed if submitting to server)
+            event.preventDefault()
+            // handle form data
+            const formData = new FormData(event.target)
+            alert(`Your Name is ${formData.get("name")}`)
+            // close the modal
+            modal2.close()
+        })
+      </script>
+      </div>
+      <!-- ------------------------------------------ -->
+
+      <style>
+
+        #example1, #example2 {
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #example1 {
+            background-color: blanchedalmond;
+        }
+
+        #example2 {
+            background-color: darkgray;
+        }
+
+        
+      </style>
+
+  </body>
+</html>
