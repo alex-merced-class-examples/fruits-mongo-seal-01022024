@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="modal-bg">
+        <div id="modal">
+            This is the Modal
+            <button id="close">close modal</button>
+        </div>
+    </div>
+
+    <main>
+        <button id="open">Open Modal</button>
+    </main>
+
+    <style>
+        #modal-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100dvw;
+            height: 100dvh;
+            background-color: rgba(0, 0, 0, .8);
+            display: none;
+            justify-content: center;
+            align-items: center
+        }
+
+        #modal {
+            width: 50%;
+            height: 50%;
+            background-color: white;
+        }
+    </style>
+
+    <script>
+        const open = document.querySelector("#open")
+        const close = document.querySelector("#close")
+        const modalBG = document.querySelector("#modal-bg")
+
+        open.addEventListener("click", () => {
+            modalBG.style.display = "flex"
+        })
+
+        close.addEventListener("click", () => {
+            modalBG.style.display = "none"
+        })
+    </script>
+    
+</body>
+</html>

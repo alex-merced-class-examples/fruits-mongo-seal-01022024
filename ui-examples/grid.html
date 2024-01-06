@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <header></header>
+
+      <section></section>
+      <aside></aside>
+
+      <footer></footer>
+    </div>
+
+    <style>
+      #container {
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "aside section section"
+          "aside section section"
+          "aside section section"
+          "aside section section"
+          "footer footer footer";
+        height: 100dvh;
+      }
+
+      header {
+        grid-area: header;
+        background-color: blue;
+      }
+
+      section {
+        grid-area: section;
+        background-color: orange;
+      }
+
+      aside {
+        grid-area: aside;
+        background-color: green;
+      }
+
+      footer {
+        grid-area: footer;
+        background-color: purple;
+      }
+
+
+    @media(max-width:600px){
+        #container {
+            display: grid;
+            grid-template-areas:
+              "header"
+              "section"
+              "footer";
+            height: 100dvh;
+          }
+
+        aside {
+            display: none;
+        }
+    }
+    </style>
+  </body>
+</html>
