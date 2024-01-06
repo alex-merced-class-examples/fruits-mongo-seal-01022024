@@ -10,11 +10,19 @@
         <% for(let fruit of fruits){ %>
 
         <article>
-          <a href="/fruits/<%= fruit._id %>">
-            <h2>
+
+            <h2
+            
+            hx-get="/fruits/<%= fruit._id %>"
+            hx-trigger="click"
+            hx-target="div"
+            hx-swap="outerHTML"
+            hx-select="article"
+            
+            >
               <%= fruit.name %> - <%= fruit.readyToEat ? "Ripe" : "Not Ripe" %>
             </h2>
-          </a>
+
         </article>
 
         <% } %>
